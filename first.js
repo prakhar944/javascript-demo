@@ -1,2 +1,10 @@
-let butt=document.querySelector("button");
-currentMode="light";
+ let score="78abc";
+ 
+ console.log(typeof score);
+
+
+ let valueNumber=Number(score);
+ console.log(typeof valueNumber);
+ console.log(valueNumber);
+
+
