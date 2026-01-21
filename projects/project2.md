@@ -1,0 +1,58 @@
+# Projects related to DOM
+
+## Project Link
+[Click Here]:( https://stackblitz.com/edit/dom-project-chaiaurcode?file=index.html)
+
+# Solution Code
+
+##Project 2
+
+```Javascript
+
+const form = document.querySelector('form');
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  const height = parseInt(document.querySelector('#height').value);
+  const weight = parseInt(document.querySelector('#weight').value);
+  const results = document.querySelector('#results');
+
+  if (height == '' || height <= 0 || isNaN(height)) {
+    results.innerHTML = 'Please give a valid height';
+  }
+  if (weight == '' || weight <= 0 || isNaN(weight)) {
+    results.innerHTML = 'Please give a valid weight';
+  } else {
+    const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+    results.innerHTML = `<span>BMI is ${bmi} </span>`;
+  }
+});
+
+
+```
+```html
+
+  <body>
+    <nav>
+      <a href="/" aria-current="page">Home</a>
+      <a target="_blank" href="https://www.youtube.com/@chaiaurcode"
+        >Youtube channel</a
+      >
+    </nav>
+    <div class="container">
+      <h1>BMI Calculator</h1>
+      <form>
+        <p><label>Height in CM: </label><input type="text" id="height" /></p>
+        <p><label>Weight in KG: </label><input type="text" id="weight" /></p>
+        <button>Calculate</button>
+        <div id="results"></div>
+        <div id="weight-guide">
+          <h3>BMI Weight Guide</h3>
+          <p>Under Weight = Less than 18.6</p>
+          <p>Normal Range = 18.6 and 24.9</p>
+          <p>Overweight = Greater than 24.9</p>
+        </div>
+      </form>
+    </div>
+  </body>
+
+```
